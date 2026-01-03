@@ -1,4 +1,4 @@
-{
+﻿{
 	"type-group": {
 		"modes": "Modi",
 		"mcps": "MCP Servers",
@@ -67,3 +67,4 @@
 		"removeError": "Verwijdering van \"{{itemName}}\" mislukt: {{errorMessage}}"
 	}
 }
+

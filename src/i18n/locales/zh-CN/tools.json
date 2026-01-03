@@ -1,4 +1,4 @@
-{
+﻿{
 	"readFile": {
 		"linesRange": " (第 {{start}}-{{end}} 行)",
 		"definitionsOnly": " (仅定义)",
@@ -24,8 +24,9 @@
 		"invalidImageData": "响应中的图像数据无效",
 		"invalidImageFormat": "收到的图像格式无效",
 		"unknownError": "发生未知错误",
-		"roo": {
-			"authRequired": "图像生成需要 Roo Code Cloud 认证。请登录 Roo Code Cloud。"
+		"CodexFlow": {
+			"authRequired": "图像生成需要 CodexFlow Cloud 认证。请登录 CodexFlow Cloud。"
 		}
 	}
 }
+

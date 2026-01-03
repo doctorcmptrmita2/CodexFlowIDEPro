@@ -1,4 +1,4 @@
-{
+﻿{
 	"readFile": {
 		"linesRange": " (lignes {{start}}-{{end}})",
 		"definitionsOnly": " (définitions uniquement)",
@@ -24,8 +24,9 @@
 		"invalidImageData": "Données d'image non valides dans la réponse",
 		"invalidImageFormat": "Format d'image non valide reçu",
 		"unknownError": "Une erreur inconnue s'est produite",
-		"roo": {
-			"authRequired": "L'authentification Roo Code Cloud est requise pour la génération d'images. Veuillez vous connecter à Roo Code Cloud."
+		"CodexFlow": {
+			"authRequired": "L'authentification CodexFlow Cloud est requise pour la génération d'images. Veuillez vous connecter à CodexFlow Cloud."
 		}
 	}
 }
+

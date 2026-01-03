@@ -1,4 +1,4 @@
-{
+﻿{
 	"type-group": {
 		"modes": "Modlar",
 		"mcps": "MCP Sunucuları",
@@ -67,3 +67,4 @@
 		"removeError": "\"{{itemName}}\" kaldırılamadı: {{errorMessage}}"
 	}
 }
+

@@ -1,4 +1,4 @@
-{
+﻿{
 	"dialogTitle": "Relé Humà - Si us plau, ajudeu a copiar/enganxar informació",
 	"dialogDescription": "Si us plau, copieu el següent prompt a la IA web, després enganxeu la resposta de la IA al quadre d'entrada de sota.",
 	"copiedToClipboard": "Copiat al porta-retalls",
@@ -11,3 +11,4 @@
 		"submit": "Enviar"
 	}
 }
+

@@ -1,4 +1,4 @@
-{
+﻿{
 	"dialogTitle": "İnsan Aktarımı - Lütfen bilgileri kopyalama/yapıştırmada yardımcı olun",
 	"dialogDescription": "Lütfen aşağıdaki metni web AI'ya kopyalayın, ardından AI'nın yanıtını aşağıdaki giriş kutusuna yapıştırın.",
 	"copiedToClipboard": "Panoya kopyalandı",
@@ -11,3 +11,4 @@
 		"submit": "Gönder"
 	}
 }
+

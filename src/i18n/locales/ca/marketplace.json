@@ -1,4 +1,4 @@
-{
+﻿{
 	"type-group": {
 		"modes": "Modes",
 		"mcps": "Servidors MCP",
@@ -67,3 +67,4 @@
 		"removeError": "Error en eliminar \"{{itemName}}\": {{errorMessage}}"
 	}
 }
+

@@ -1,4 +1,4 @@
-{
+﻿{
 	"errorBoundary": {
 		"title": "出现了错误",
 		"reportText": "请通过在以下位置报告此错误来帮助我们改进",
@@ -108,3 +108,4 @@
 		"awaiting_child": "等待子任务 {{childId}}"
 	}
 }
+

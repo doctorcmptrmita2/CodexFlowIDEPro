@@ -1,4 +1,4 @@
-{
+﻿{
 	"readFile": {
 		"linesRange": " (satır {{start}}-{{end}})",
 		"definitionsOnly": " (sadece tanımlar)",
@@ -24,8 +24,9 @@
 		"invalidImageData": "Yanıtta geçersiz görüntü verisi",
 		"invalidImageFormat": "Geçersiz görüntü formatı alındı",
 		"unknownError": "Bilinmeyen bir hata oluştu",
-		"roo": {
-			"authRequired": "Görüntü oluşturma için Roo Code Cloud kimlik doğrulaması gereklidir. Lütfen Roo Code Cloud'da oturum açın."
+		"CodexFlow": {
+			"authRequired": "Görüntü oluşturma için CodexFlow Cloud kimlik doğrulaması gereklidir. Lütfen CodexFlow Cloud'da oturum açın."
 		}
 	}
 }
+

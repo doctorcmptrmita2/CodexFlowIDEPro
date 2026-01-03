@@ -1,4 +1,4 @@
-{
+﻿{
 	"readFile": {
 		"linesRange": " (línies {{start}}-{{end}})",
 		"definitionsOnly": " (només definicions)",
@@ -24,8 +24,9 @@
 		"invalidImageData": "Dades d'imatge no vàlides en la resposta",
 		"invalidImageFormat": "Format d'imatge no vàlid rebut",
 		"unknownError": "S'ha produït un error desconegut",
-		"roo": {
-			"authRequired": "Es requereix autenticació de Roo Code Cloud per a la generació d'imatges. Inicia sessió a Roo Code Cloud."
+		"CodexFlow": {
+			"authRequired": "Es requereix autenticació de CodexFlow Cloud per a la generació d'imatges. Inicia sessió a CodexFlow Cloud."
 		}
 	}
 }
+

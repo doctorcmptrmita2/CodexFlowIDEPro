@@ -1,4 +1,4 @@
-{
+﻿{
 	"type-group": {
 		"modes": "模式",
 		"mcps": "MCP 伺服器",
@@ -67,3 +67,4 @@
 		"removeError": "「{{itemName}}」移除失敗：{{errorMessage}}"
 	}
 }
+

@@ -1,4 +1,4 @@
-{
+﻿{
 	"dialogTitle": "Human Relay - Please Help Copy/Paste Information",
 	"dialogDescription": "Please copy the following prompt to the web AI, then paste the AI's response in the input box below.",
 	"copiedToClipboard": "Copied to clipboard",
@@ -11,3 +11,4 @@
 		"submit": "Submit"
 	}
 }
+

@@ -1,4 +1,4 @@
-{
+﻿{
 	"errors": {
 		"invalid_settings_format": "Định dạng JSON của cài đặt MCP không hợp lệ. Vui lòng đảm bảo cài đặt của bạn tuân theo định dạng JSON chính xác.",
 		"invalid_settings_syntax": "Định dạng JSON của cài đặt MCP không hợp lệ. Vui lòng kiểm tra lỗi cú pháp trong tệp cài đặt của bạn.",
@@ -26,3 +26,4 @@
 		"project_config_deleted": "Tệp cấu hình MCP của dự án đã bị xóa. Tất cả các máy chủ MCP của dự án đã bị ngắt kết nối."
 	}
 }
+

@@ -1,4 +1,4 @@
-{
+﻿{
 	"errorBoundary": {
 		"title": "Terjadi kesalahan",
 		"reportText": "Bantu kami meningkatkan dengan melaporkan kesalahan ini di",
@@ -108,3 +108,4 @@
 		"awaiting_child": "Menunggu tugas anak {{childId}}"
 	}
 }
+

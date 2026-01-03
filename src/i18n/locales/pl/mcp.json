@@ -1,4 +1,4 @@
-{
+﻿{
 	"errors": {
 		"invalid_settings_format": "Nieprawidłowy format JSON ustawień MCP. Upewnij się, że Twoje ustawienia są zgodne z poprawnym formatem JSON.",
 		"invalid_settings_syntax": "Nieprawidłowy format JSON ustawień MCP. Sprawdź, czy w pliku ustawień nie ma błędów składniowych.",
@@ -26,3 +26,4 @@
 		"project_config_deleted": "Plik konfiguracyjny MCP projektu został usunięty. Wszystkie serwery MCP projektu zostały odłączone."
 	}
 }
+

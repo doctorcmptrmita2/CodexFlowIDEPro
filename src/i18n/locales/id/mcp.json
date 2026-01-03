@@ -1,4 +1,4 @@
-{
+﻿{
 	"errors": {
 		"invalid_settings_format": "Format JSON pengaturan MCP tidak valid. Pastikan pengaturan kamu mengikuti format JSON yang benar.",
 		"invalid_settings_syntax": "Format JSON pengaturan MCP tidak valid. Periksa file pengaturan kamu untuk kesalahan sintaks.",
@@ -26,3 +26,4 @@
 		"project_config_deleted": "File konfigurasi MCP proyek dihapus. Semua server MCP proyek telah diputus koneksinya."
 	}
 }
+

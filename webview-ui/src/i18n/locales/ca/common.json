@@ -1,4 +1,4 @@
-{
+﻿{
 	"errorBoundary": {
 		"title": "Alguna cosa ha anat malament",
 		"reportText": "Si us plau, ajuda'ns a millorar informant d'aquest error a",
@@ -108,3 +108,4 @@
 		"awaiting_child": "Esperant la tasca filla {{childId}}"
 	}
 }
+

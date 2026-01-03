@@ -1,4 +1,4 @@
-{
+﻿{
 	"dialogTitle": "人工轉發 - 請協助複製貼上訊息",
 	"dialogDescription": "請將以下提示詞複製到網頁 AI，然後將 AI 的回覆貼上到下方的輸入框中。",
 	"copiedToClipboard": "已複製到剪貼簿",
@@ -11,3 +11,4 @@
 		"submit": "提交"
 	}
 }
+

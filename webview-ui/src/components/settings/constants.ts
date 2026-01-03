@@ -46,7 +46,12 @@ export const MODELS_BY_PROVIDER: Partial<Record<ProviderName, Record<string, Mod
 	baseten: basetenModels,
 }
 
+// CodexFlow: LiteLLM Gateway varsayılan ve önerilen provider
+// Roo Code Cloud devre dışı bırakıldı
 export const PROVIDERS = [
+	// ⭐ CodexFlow Önerilen
+	{ value: "litellm", label: "⭐ CodexFlow LiteLLM Gateway (Önerilen)" },
+	// Diğer Providerlar
 	{ value: "openrouter", label: "OpenRouter" },
 	{ value: "deepinfra", label: "DeepInfra" },
 	{ value: "anthropic", label: "Anthropic" },
@@ -72,14 +77,13 @@ export const PROVIDERS = [
 	{ value: "groq", label: "Groq" },
 	{ value: "huggingface", label: "Hugging Face" },
 	{ value: "chutes", label: "Chutes AI" },
-	{ value: "litellm", label: "LiteLLM" },
 	{ value: "sambanova", label: "SambaNova" },
 	{ value: "zai", label: "Z.ai" },
 	{ value: "fireworks", label: "Fireworks AI" },
 	{ value: "featherless", label: "Featherless AI" },
 	{ value: "io-intelligence", label: "IO Intelligence" },
-	{ value: "roo", label: "Roo Code Cloud" },
 	{ value: "vercel-ai-gateway", label: "Vercel AI Gateway" },
 	{ value: "minimax", label: "MiniMax" },
 	{ value: "baseten", label: "Baseten" },
-].sort((a, b) => a.label.localeCompare(b.label))
+	// { value: "roo", label: "Roo Code Cloud" }, // CodexFlow: Devre dışı
+]

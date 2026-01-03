@@ -1,36 +1,43 @@
-import { useState } from "react"
+﻿import { useState } from "react"
 
-const RooHero = () => {
-	const [imagesBaseUri] = useState(() => {
-		const w = window as any
-		return w.IMAGES_BASE_URI || ""
-	})
-
+/**
+ * CodexFlow Hero Component
+ * Modern, gradient-based logo display
+ */
+const CodexFlowHero = () => {
 	return (
-		<div className="mb-4 relative forced-color-adjust-none group flex flex-col items-center w-30 pt-4 overflow-clip">
-			<div
-				style={{
-					backgroundColor: "var(--vscode-foreground)",
-					WebkitMaskImage: `url('${imagesBaseUri}/roo-logo.svg')`,
-					WebkitMaskRepeat: "no-repeat",
-					WebkitMaskSize: "contain",
-					maskImage: `url('${imagesBaseUri}/roo-logo.svg')`,
-					maskRepeat: "no-repeat",
-					maskSize: "contain",
-				}}
-				className="z-5 mr-auto group-hover:animate-bounce translate-y-0 transition-transform duration-500">
-				<img src={imagesBaseUri + "/roo-logo.svg"} alt="Roo logo" className="h-8 opacity-0" />
+		<div className="mb-6 relative flex flex-col items-center pt-4">
+			{/* CodexFlow Logo - Modern Gradient Style */}
+			<div className="flex items-center gap-3 group">
+				{/* Icon */}
+				<div className="relative">
+					<div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-400 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+						<svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+							<path d="M2 17L12 22L22 17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+							<path d="M2 12L12 17L22 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+						</svg>
+					</div>
+					{/* Glow effect */}
+					<div className="absolute inset-0 w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-400 blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-300" />
+				</div>
+				
+				{/* Text */}
+				<div className="flex flex-col">
+					<span className="text-xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent">
+						CodexFlow
+					</span>
+					<span className="text-xs text-vscode-foreground/60">
+						AI Agent • LiteLLM Gateway
+					</span>
+				</div>
 			</div>
-			<div
-				className="w-[200%] -mt-0.25 h-0.5 overflow-hidden opacity-0 group-hover:opacity-70 transition-opacity duration-300"
-				data-testid="roo-hero-ground">
-				<div className="w-full border-b-1 group-hover:border-b-1 border-dashed border-vscode-foreground animate-ground-slide" />
-			</div>
-			<div className="z-4 bg-gradient-to-r from-transparent to-vscode-sideBar-background absolute top-0 right-0 bottom-0 w-10 opacity-100" />
-			<div className="z-3 bg-gradient-to-l from-transparent to-vscode-sideBar-background absolute top-0 left-0 bottom-0 w-10 opacity-100" />
-			<div className="bg-vscode-foreground/10 rounded-full size-10 z-1 absolute -bottom-4 animate-sun opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-[2px]" />
+			
+			{/* Decorative line */}
+			<div className="mt-4 w-32 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
 		</div>
 	)
 }
 
-export default RooHero
+export default CodexFlowHero
+

@@ -1,4 +1,4 @@
-{
+﻿{
 	"type-group": {
 		"modes": "Modi",
 		"mcps": "MCP-Server",
@@ -67,3 +67,4 @@
 		"removeError": "Entfernung von \"{{itemName}}\" fehlgeschlagen: {{errorMessage}}"
 	}
 }
+

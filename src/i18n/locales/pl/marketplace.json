@@ -1,4 +1,4 @@
-{
+﻿{
 	"type-group": {
 		"modes": "Tryby",
 		"mcps": "Serwery MCP",
@@ -67,3 +67,4 @@
 		"removeError": "Usunięcie \"{{itemName}}\" nie powiodło się: {{errorMessage}}"
 	}
 }
+

@@ -1,4 +1,4 @@
-{
+﻿{
 	"unknownError": "Unbekannter Fehler",
 	"authenticationFailed": "Erstellung von Einbettungen fehlgeschlagen: Authentifizierung fehlgeschlagen. Bitte überprüfe deinen API-Schlüssel.",
 	"failedWithStatus": "Erstellung von Einbettungen nach {{attempts}} Versuchen fehlgeschlagen: HTTP {{statusCode}} - {{errorMessage}}",
@@ -72,3 +72,4 @@
 		"indexingRequiresWorkspace": "Indexierung erfordert einen offenen Workspace-Ordner"
 	}
 }
+

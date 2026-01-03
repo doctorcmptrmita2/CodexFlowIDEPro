@@ -1,4 +1,4 @@
-{
+﻿{
 	"title": "MCP 서버",
 	"done": "완료",
 	"marketplace": "MCP 마켓플레이스",
@@ -63,3 +63,4 @@
 		"error": "오류"
 	}
 }
+

@@ -1,4 +1,4 @@
-{
+﻿{
 	"unknownError": "Erreur inconnue",
 	"authenticationFailed": "Échec de la création des embeddings : Échec de l'authentification. Veuillez vérifier votre clé API.",
 	"failedWithStatus": "Échec de la création des embeddings après {{attempts}} tentatives : HTTP {{statusCode}} - {{errorMessage}}",
@@ -72,3 +72,4 @@
 		"indexingRequiresWorkspace": "L'indexation nécessite l'ouverture d'un dossier workspace"
 	}
 }
+

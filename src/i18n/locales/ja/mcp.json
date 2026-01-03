@@ -1,4 +1,4 @@
-{
+﻿{
 	"errors": {
 		"invalid_settings_format": "MCP設定のJSONフォーマットが無効です。設定が正しいJSONフォーマットに従っていることを確認してください。",
 		"invalid_settings_syntax": "MCP設定のJSONフォーマットが無効です。設定ファイルの構文エラーを確認してください。",
@@ -26,3 +26,4 @@
 		"project_config_deleted": "プロジェクトMCP設定ファイルが削除されました。すべてのプロジェクトMCPサーバーが切断されました。"
 	}
 }
+

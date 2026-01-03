@@ -1,4 +1,4 @@
-{
+﻿{
 	"type-group": {
 		"modes": "मोड्स",
 		"mcps": "MCP सर्वर",
@@ -67,3 +67,4 @@
 		"removeError": "\"{{itemName}}\" हटाने में विफल: {{errorMessage}}"
 	}
 }
+

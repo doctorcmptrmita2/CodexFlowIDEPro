@@ -1,4 +1,4 @@
-{
+﻿{
 	"errors": {
 		"invalid_settings_format": "잘못된 MCP 설정 JSON 형식입니다. 설정이 올바른 JSON 형식을 따르는지 확인하세요.",
 		"invalid_settings_syntax": "잘못된 MCP 설정 JSON 형식입니다. 설정 파일의 구문 오류를 확인하세요.",
@@ -26,3 +26,4 @@
 		"project_config_deleted": "프로젝트 MCP 구성 파일이 삭제되었습니다. 모든 프로젝트 MCP 서버가 연결 해제되었습니다."
 	}
 }
+

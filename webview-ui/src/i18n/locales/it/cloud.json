@@ -1,23 +1,23 @@
-{
+﻿{
 	"title": "Cloud",
 	"profilePicture": "Immagine del profilo",
 	"logOut": "Disconnetti",
 	"testApiAuthentication": "Verifica autenticazione API",
-	"signIn": "Connetti a Roo Code Cloud",
+	"signIn": "Connetti a CodexFlow Gateway",
 	"connect": "Inizia",
-	"cloudBenefitsTitle": "Prova Roo Code Cloud",
-	"cloudBenefitProvider": "Accedi a modelli gratuiti e a pagamento che funzionano perfettamente con Roo",
+	"cloudBenefitsTitle": "Prova CodexFlow Gateway",
+	"cloudBenefitProvider": "Accedi a modelli gratuiti e a pagamento che funzionano perfettamente con CodexFlow",
 	"cloudBenefitCloudAgents": "Assegna attività ad agenti Cloud autonomi",
 	"cloudBenefitTriggers": "Ottieni revisioni del codice su Github, avvia attività da Slack e altro",
 	"cloudBenefitWalkaway": "Segui e controlla le attività da qualsiasi luogo (incluso il tuo telefono)",
 	"cloudBenefitHistory": "Accedi alla cronologia delle tue attività da qualsiasi luogo e condividile con altri",
 	"cloudBenefitMetrics": "Ottieni una visione olistica del tuo consumo di token",
-	"visitCloudWebsite": "Visita Roo Code Cloud",
+	"visitCloudWebsite": "Visita CodexFlow Gateway",
 	"taskSync": "Sincronizzazione attività",
-	"taskSyncDescription": "Sincronizza le tue attività per visualizzarle e condividerle su Roo Code Cloud",
-	"remoteControl": "Roomote Control",
-	"remoteControlDescription": "Consenti il controllo delle attività da Roo Code Cloud",
-	"remoteControlRequiresTaskSync": "La sincronizzazione delle attività deve essere abilitata per utilizzare Roomote Control",
+	"taskSyncDescription": "Sincronizza le tue attività per visualizzarle e condividerle su CodexFlow Gateway",
+	"remoteControl": "CodexFlowmote Control",
+	"remoteControlDescription": "Consenti il controllo delle attività da CodexFlow Gateway",
+	"remoteControlRequiresTaskSync": "La sincronizzazione delle attività deve essere abilitata per utilizzare CodexFlowmote Control",
 	"taskSyncManagedByOrganization": "La sincronizzazione delle attività è gestita dalla tua organizzazione",
 	"usageMetricsAlwaysReported": "Le informazioni sull'utilizzo del modello vengono sempre segnalate quando si è connessi",
 	"authWaiting": "In attesa del completamento dell'autenticazione...",
@@ -25,12 +25,13 @@
 	"pasteCallbackUrl": "Copia l'URL di redirect dal tuo browser e incollalo qui:",
 	"startOver": "Ricomincia",
 	"personalAccount": "Account Personale",
-	"switchAccount": "Cambia Account Roo Code Cloud",
+	"switchAccount": "Cambia Account CodexFlow Gateway",
 	"createTeamAccount": "Crea Account del Team",
-	"cloudUrlPillLabel": "URL di Roo Code Cloud",
+	"cloudUrlPillLabel": "URL di CodexFlow Gateway",
 	"upsell": {
-		"autoApprovePowerUser": "Vuoi dare un po' di indipendenza a Roo? Controllalo da qualsiasi luogo con Roo Code Cloud. <learnMoreLink>Scopri di più</learnMoreLink>.",
+		"autoApprovePowerUser": "Vuoi dare un po' di indipendenza a CodexFlow? Controllalo da qualsiasi luogo con CodexFlow Gateway. <learnMoreLink>Scopri di più</learnMoreLink>.",
 		"longRunningTask": "Potrebbe volerci un po' di tempo. Continua da qualsiasi luogo con il Cloud.",
-		"taskList": "Ti piace Roo? Dai un'occhiata a Roo Code Cloud: segui e controlla le tue attività da qualsiasi luogo, esegui agenti Cloud autonomi, ottieni statistiche di utilizzo e altro ancora. <learnMoreLink>Scopri di più</learnMoreLink>."
+		"taskList": "Ti piace CodexFlow? Dai un'occhiata a CodexFlow Gateway: segui e controlla le tue attività da qualsiasi luogo, esegui agenti Cloud autonomi, ottieni statistiche di utilizzo e altro ancora. <learnMoreLink>Scopri di più</learnMoreLink>."
 	}
 }
+

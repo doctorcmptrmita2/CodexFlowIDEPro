@@ -1,4 +1,4 @@
-{
+﻿{
 	"errors": {
 		"invalid_settings_format": "Ongeldig MCP-instellingen JSON-formaat. Zorg ervoor dat je instellingen het juiste JSON-formaat volgen.",
 		"invalid_settings_syntax": "Ongeldig MCP-instellingen JSON-formaat. Controleer je instellingenbestand op syntaxfouten.",
@@ -26,3 +26,4 @@
 		"project_config_deleted": "Project MCP-configuratiebestand verwijderd. Alle project MCP-servers zijn losgekoppeld."
 	}
 }
+

@@ -1,4 +1,4 @@
-{
+﻿{
 	"errors": {
 		"invalid_settings_format": "MCP设置JSON格式无效。请确保您的设置遵循正确的JSON格式。",
 		"invalid_settings_syntax": "MCP设置JSON格式无效。请检查您的设置文件是否有语法错误。",
@@ -26,3 +26,4 @@
 		"project_config_deleted": "项目MCP配置文件已删除。所有项目MCP服务器已断开连接。"
 	}
 }
+

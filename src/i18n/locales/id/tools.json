@@ -1,4 +1,4 @@
-{
+﻿{
 	"readFile": {
 		"linesRange": " (baris {{start}}-{{end}})",
 		"definitionsOnly": " (hanya definisi)",
@@ -27,8 +27,9 @@
 		"invalidImageData": "Data gambar tidak valid dalam respons",
 		"invalidImageFormat": "Format gambar tidak valid diterima",
 		"unknownError": "Terjadi kesalahan yang tidak diketahui",
-		"roo": {
-			"authRequired": "Autentikasi Roo Code Cloud diperlukan untuk menghasilkan gambar. Silakan masuk ke Roo Code Cloud."
+		"CodexFlow": {
+			"authRequired": "Autentikasi CodexFlow Cloud diperlukan untuk menghasilkan gambar. Silakan masuk ke CodexFlow Cloud."
 		}
 	}
 }
+

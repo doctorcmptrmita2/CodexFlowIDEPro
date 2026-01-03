@@ -48,7 +48,12 @@ export function handleProviderError(
 
 	if (error instanceof Error) {
 		const anyErr = error as any
-		const msg = anyErr?.error?.metadata?.raw || error.message || ""
+		let msg = anyErr?.error?.metadata?.raw || error.message || ""
+
+		// Handle AbortError/DOMException (request cancelled/terminated)
+		if (error.name === "AbortError" || error.name === "DOMException" || msg === "" || msg.toLowerCase().includes("aborted") || msg.toLowerCase().includes("terminated")) {
+			msg = "Request was terminated or cancelled"
+		}
 
 		// Log the original error details for debugging
 		console.error(`[${providerName}] API error:`, {

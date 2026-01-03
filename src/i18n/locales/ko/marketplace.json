@@ -1,4 +1,4 @@
-{
+﻿{
 	"type-group": {
 		"modes": "모드",
 		"mcps": "MCP 서버",
@@ -67,3 +67,4 @@
 		"removeError": "\"{{itemName}}\" 제거 실패: {{errorMessage}}"
 	}
 }
+

@@ -1,4 +1,4 @@
-{
+﻿{
 	"dialogTitle": "Relevo Humano - Por favor ayude a copiar/pegar información",
 	"dialogDescription": "Por favor copie el siguiente mensaje en la IA web, luego pegue la respuesta de la IA en el cuadro de entrada a continuación.",
 	"copiedToClipboard": "Copiado al portapapeles",
@@ -11,3 +11,4 @@
 		"submit": "Enviar"
 	}
 }
+

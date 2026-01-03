@@ -1,4 +1,4 @@
-{
+﻿{
 	"type-group": {
 		"modes": "Режимы",
 		"mcps": "MCP серверы",
@@ -67,3 +67,4 @@
 		"removeError": "Не удалось удалить \"{{itemName}}\": {{errorMessage}}"
 	}
 }
+

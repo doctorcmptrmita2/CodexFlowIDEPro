@@ -1,4 +1,4 @@
-{
+﻿{
 	"readFile": {
 		"linesRange": " (dòng {{start}}-{{end}})",
 		"definitionsOnly": " (chỉ định nghĩa)",
@@ -24,8 +24,9 @@
 		"invalidImageData": "Dữ liệu hình ảnh không hợp lệ trong phản hồi",
 		"invalidImageFormat": "Nhận được định dạng hình ảnh không hợp lệ",
 		"unknownError": "Đã xảy ra lỗi không xác định",
-		"roo": {
-			"authRequired": "Yêu cầu xác thực Roo Code Cloud để tạo hình ảnh. Vui lòng đăng nhập vào Roo Code Cloud."
+		"CodexFlow": {
+			"authRequired": "Yêu cầu xác thực CodexFlow Cloud để tạo hình ảnh. Vui lòng đăng nhập vào CodexFlow Cloud."
 		}
 	}
 }
+

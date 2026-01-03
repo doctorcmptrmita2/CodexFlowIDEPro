@@ -1,4 +1,4 @@
-{
+﻿{
 	"type-group": {
 		"modes": "Mode",
 		"mcps": "Server MCP",
@@ -67,3 +67,4 @@
 		"removeError": "Gagal menghapus \"{{itemName}}\": {{errorMessage}}"
 	}
 }
+

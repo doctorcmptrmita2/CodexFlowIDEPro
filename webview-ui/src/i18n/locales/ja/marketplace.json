@@ -1,5 +1,5 @@
-{
-	"title": "Roo Marketplace",
+﻿{
+	"title": "CodexFlow Marketplace",
 	"tabs": {
 		"installed": "インストール済み",
 		"settings": "設定",
@@ -154,3 +154,4 @@
 		"issueText": "Marketplaceアイテムで問題を見つけた、または新しいアイテムの提案がありますか？<0>GitHub issueを開いて</0>お知らせください！"
 	}
 }
+

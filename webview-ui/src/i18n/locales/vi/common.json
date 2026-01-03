@@ -1,4 +1,4 @@
-{
+﻿{
 	"errorBoundary": {
 		"title": "Đã xảy ra lỗi",
 		"reportText": "Vui lòng giúp chúng tôi cải thiện bằng cách báo cáo lỗi này trên",
@@ -108,3 +108,4 @@
 		"awaiting_child": "Đang chờ nhiệm vụ con {{childId}}"
 	}
 }
+

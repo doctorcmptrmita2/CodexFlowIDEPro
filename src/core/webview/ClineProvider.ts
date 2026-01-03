@@ -1130,7 +1130,7 @@ export class ClineProvider
 						window.AUDIO_BASE_URI = "${audioUri}"
 						window.MATERIAL_ICONS_BASE_URI = "${materialIconsUri}"
 					</script>
-					<title>Roo Code</title>
+					<title>CodexFlow Agent</title>
 				</head>
 				<body>
 					<div id="root"></div>

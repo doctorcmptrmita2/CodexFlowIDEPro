@@ -1,4 +1,4 @@
-{
+﻿{
 	"type-group": {
 		"modes": "モード",
 		"mcps": "MCPサーバー",
@@ -67,3 +67,4 @@
 		"removeError": "\"{{itemName}}\"の削除に失敗しました: {{errorMessage}}"
 	}
 }
+

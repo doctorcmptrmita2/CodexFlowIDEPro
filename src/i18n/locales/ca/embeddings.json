@@ -1,4 +1,4 @@
-{
+﻿{
 	"unknownError": "Error desconegut",
 	"authenticationFailed": "No s'han pogut crear les incrustacions: ha fallat l'autenticació. Comproveu la vostra clau d'API.",
 	"failedWithStatus": "No s'han pogut crear les incrustacions després de {{attempts}} intents: HTTP {{statusCode}} - {{errorMessage}}",
@@ -72,3 +72,4 @@
 		"indexingRequiresWorkspace": "Indexació requereix una carpeta de workspace oberta"
 	}
 }
+

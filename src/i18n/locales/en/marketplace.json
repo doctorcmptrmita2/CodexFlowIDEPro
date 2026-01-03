@@ -1,4 +1,4 @@
-{
+﻿{
 	"type-group": {
 		"modes": "Modes",
 		"mcps": "MCP Servers",
@@ -67,3 +67,4 @@
 		"removeError": "Failed to remove \"{{itemName}}\": {{errorMessage}}"
 	}
 }
+

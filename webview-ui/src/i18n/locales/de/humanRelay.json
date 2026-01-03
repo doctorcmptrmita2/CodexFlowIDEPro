@@ -1,4 +1,4 @@
-{
+﻿{
 	"dialogTitle": "Menschliche Weiterleitung - Bitte hilf beim Kopieren/Einfügen von Informationen",
 	"dialogDescription": "Bitte kopiere den folgenden Prompt in die Web-KI und füge dann die Antwort der KI in das Eingabefeld unten ein.",
 	"copiedToClipboard": "In die Zwischenablage kopiert",
@@ -11,3 +11,4 @@
 		"submit": "Absenden"
 	}
 }
+

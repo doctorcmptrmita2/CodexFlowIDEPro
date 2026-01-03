@@ -1,4 +1,4 @@
-{
+﻿{
 	"errorBoundary": {
 		"title": "Er is iets misgegaan",
 		"reportText": "Help ons te verbeteren door deze fout te melden op",
@@ -108,3 +108,4 @@
 		"awaiting_child": "Wachten op kindtaak {{childId}}"
 	}
 }
+

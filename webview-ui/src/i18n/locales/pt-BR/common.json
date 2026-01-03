@@ -1,4 +1,4 @@
-{
+﻿{
 	"errorBoundary": {
 		"title": "Algo deu errado",
 		"reportText": "Ajude-nos a melhorar relatando este erro em",
@@ -108,3 +108,4 @@
 		"awaiting_child": "Aguardando tarefa filha {{childId}}"
 	}
 }
+

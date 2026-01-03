@@ -1,4 +1,4 @@
-{
+﻿{
 	"unknownError": "Nieznany błąd",
 	"authenticationFailed": "Nie udało się utworzyć osadzeń: Uwierzytelnianie nie powiodło się. Sprawdź swój klucz API.",
 	"failedWithStatus": "Nie udało się utworzyć osadzeń po {{attempts}} próbach: HTTP {{statusCode}} - {{errorMessage}}",
@@ -72,3 +72,4 @@
 		"indexingRequiresWorkspace": "Indeksowanie wymaga otwartego folderu workspace"
 	}
 }
+

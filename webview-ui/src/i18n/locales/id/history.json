@@ -1,4 +1,4 @@
-{
+﻿{
 	"recentTasks": "Tugas",
 	"viewAll": "Lihat Semua Tugas",
 	"tokens": "Token: ↑{{in}} ↓{{out}}",
@@ -52,3 +52,4 @@
 	},
 	"viewAllHistory": "Lihat semua"
 }
+

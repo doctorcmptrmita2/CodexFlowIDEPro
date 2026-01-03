@@ -1,4 +1,4 @@
-{
+﻿{
 	"readFile": {
 		"linesRange": " (regels {{start}}-{{end}})",
 		"definitionsOnly": " (alleen definities)",
@@ -24,8 +24,9 @@
 		"invalidImageData": "Ongeldige afbeeldingsgegevens in het antwoord",
 		"invalidImageFormat": "Ongeldig afbeeldingsformaat ontvangen",
 		"unknownError": "Er is een onbekende fout opgetreden",
-		"roo": {
-			"authRequired": "Roo Code Cloud-authenticatie is vereist voor het genereren van afbeeldingen. Log in bij Roo Code Cloud."
+		"CodexFlow": {
+			"authRequired": "CodexFlow Cloud-authenticatie is vereist voor het genereren van afbeeldingen. Log in bij CodexFlow Cloud."
 		}
 	}
 }
+

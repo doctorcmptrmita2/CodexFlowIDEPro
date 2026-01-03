@@ -1,4 +1,4 @@
-{
+﻿{
 	"errorBoundary": {
 		"title": "發生錯誤",
 		"reportText": "請協助我們回報此錯誤，以利產品改善：",
@@ -108,3 +108,4 @@
 		"awaiting_child": "等待子工作 {{childId}}"
 	}
 }
+

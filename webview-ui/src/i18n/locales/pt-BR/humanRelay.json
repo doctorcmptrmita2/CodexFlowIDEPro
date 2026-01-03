@@ -1,4 +1,4 @@
-{
+﻿{
 	"dialogTitle": "Retransmissão Humana - Ajude a copiar/colar informações",
 	"dialogDescription": "Por favor, copie o seguinte prompt para a IA web e depois cole a resposta da IA na caixa de entrada abaixo.",
 	"copiedToClipboard": "Copiado para a área de transferência",
@@ -11,3 +11,4 @@
 		"submit": "Enviar"
 	}
 }
+

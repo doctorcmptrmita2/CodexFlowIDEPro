@@ -66,6 +66,11 @@ export interface ApiHandlerCreateMessageMetadata {
 	mode?: string
 	suppressPreviousResponseId?: boolean
 	/**
+	 * Optional AbortSignal for request cancellation.
+	 * When provided, providers should use this signal to cancel ongoing requests.
+	 */
+	abortSignal?: AbortSignal
+	/**
 	 * Controls whether the response should be stored for 30 days in OpenAI's Responses API.
 	 * When true (default), responses are stored and can be referenced in future requests
 	 * using the previous_response_id for efficient conversation continuity.

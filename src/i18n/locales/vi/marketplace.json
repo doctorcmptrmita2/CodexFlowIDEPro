@@ -1,4 +1,4 @@
-{
+﻿{
 	"type-group": {
 		"modes": "Chế độ",
 		"mcps": "Máy chủ MCP",
@@ -67,3 +67,4 @@
 		"removeError": "Xóa \"{{itemName}}\" thất bại: {{errorMessage}}"
 	}
 }
+

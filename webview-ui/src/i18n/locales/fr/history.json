@@ -1,4 +1,4 @@
-{
+﻿{
 	"recentTasks": "Tâches",
 	"viewAll": "Voir tout",
 	"tokens": "Tokens: ↑{{in}} ↓{{out}}",
@@ -50,3 +50,4 @@
 	},
 	"viewAllHistory": "Voir tout"
 }
+

@@ -18,7 +18,7 @@ import { Button } from "@src/components/ui"
 import ApiOptions from "../settings/ApiOptions"
 import { Tab, TabContent } from "../common/Tab"
 
-import RooHero from "./RooHero"
+import CodexFlowHero from "./RooHero"
 import { Trans } from "react-i18next"
 import { ArrowLeft, ArrowRight, BadgeInfo, Brain, TriangleAlert } from "lucide-react"
 import { buildDocLink } from "@/utils/docLinks"
@@ -37,7 +37,8 @@ const WelcomeViewProvider = () => {
 	} = useExtensionState()
 	const { t } = useAppTranslation()
 	const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined)
-	const [selectedProvider, setSelectedProvider] = useState<ProviderOption | null>(null)
+	// CodexFlow: Doğrudan "custom" (3rd party) seçeneğiyle başla - Roo Cloud bypass
+	const [selectedProvider, setSelectedProvider] = useState<ProviderOption | null>("custom")
 	const [authInProgress, setAuthInProgress] = useState(false)
 	const [authOrigin, setAuthOrigin] = useState<AuthOrigin | null>(null)
 	const [showManualEntry, setShowManualEntry] = useState(false)
@@ -292,7 +293,7 @@ const WelcomeViewProvider = () => {
 		return (
 			<Tab>
 				<TabContent className="flex flex-col gap-4 p-6 justify-center">
-					<RooHero />
+					<CodexFlowHero />
 					<h2 className="mt-0 mb-0 text-xl">{t("welcome:landing.greeting")}</h2>
 
 					<div className="space-y-4 leading-normal">

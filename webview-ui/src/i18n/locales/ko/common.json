@@ -1,4 +1,4 @@
-{
+﻿{
 	"errorBoundary": {
 		"title": "문제가 발생했습니다",
 		"reportText": "이 오류를 보고하여 개선에 도움을 주세요",
@@ -108,3 +108,4 @@
 		"awaiting_child": "하위 작업 {{childId}} 대기 중"
 	}
 }
+

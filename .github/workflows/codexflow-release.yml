@@ -1,0 +1,198 @@
+name: CodexFlow Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (e.g., 1.0.8)'
+        required: false
+        type: string
+
+env:
+  NODE_VERSION: '20'
+
+jobs:
+  build-and-release:
+    name: Build & Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Get version
+        id: version
+        run: |
+          if [ -n "${{ github.event.inputs.version }}" ]; then
+            VERSION="${{ github.event.inputs.version }}"
+          else
+            VERSION=$(node -p "require('./src/package.json').version")
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Building version: $VERSION"
+
+      - name: Build Extension
+        run: pnpm build
+
+      - name: Package VSIX
+        run: |
+          cd src
+          pnpm vsix
+          echo "VSIX package created"
+
+      - name: Verify VSIX
+        run: |
+          VERSION=${{ steps.version.outputs.version }}
+          VSIX_FILE="bin/codexflow-agent-${VERSION}.vsix"
+          
+          if [ ! -f "$VSIX_FILE" ]; then
+            echo "Error: VSIX file not found at $VSIX_FILE"
+            ls -la bin/
+            exit 1
+          fi
+          
+          echo "VSIX file found: $VSIX_FILE"
+          echo "File size: $(du -h $VSIX_FILE | cut -f1)"
+          
+          # Verify contents
+          unzip -l "$VSIX_FILE" > /tmp/vsix-contents.txt
+          grep -q "extension/package.json" /tmp/vsix-contents.txt || exit 1
+          grep -q "extension/dist/extension.js" /tmp/vsix-contents.txt || exit 1
+          echo "VSIX verification passed"
+
+      - name: Generate Release Notes
+        id: release_notes
+        run: |
+          VERSION=${{ steps.version.outputs.version }}
+          
+          # Try to extract from CHANGELOG.md
+          if [ -f "src/CHANGELOG.md" ]; then
+            NOTES=$(sed -n "/## \[${VERSION}\]/,/## \[/p" src/CHANGELOG.md | sed '$d' || echo "")
+          fi
+          
+          if [ -z "$NOTES" ]; then
+            NOTES="## CodexFlow Agent v${VERSION}
+
+### 🚀 Features
+- AI-powered coding assistant
+- Multi-language support (17 languages)
+- OpenAI, Anthropic, and custom API support
+- Streaming responses
+- Code context awareness
+
+### 📦 Installation
+1. Download the \`.vsix\` file
+2. Open VS Code/VSCodium
+3. Press \`Ctrl+Shift+P\` → \`Extensions: Install from VSIX...\`
+4. Select the downloaded file
+
+### 🔗 Links
+- [GitHub](https://github.com/doctorcmptrmita2/CodexFlowIDEPro)
+"
+          fi
+          
+          # Save to file for multiline support
+          echo "$NOTES" > /tmp/release-notes.md
+          echo "Release notes generated"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: CodexFlow Agent v${{ steps.version.outputs.version }}
+          body_path: /tmp/release-notes.md
+          draft: false
+          prerelease: false
+          files: |
+            bin/codexflow-agent-${{ steps.version.outputs.version }}.vsix
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Summary
+        run: |
+          echo "## 🎉 Release Complete!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** v${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Assets:**" >> $GITHUB_STEP_SUMMARY
+          echo "- \`codexflow-agent-${{ steps.version.outputs.version }}.vsix\`" >> $GITHUB_STEP_SUMMARY
+
+  # Optional: Publish to VS Code Marketplace
+  publish-marketplace:
+    name: Publish to Marketplace
+    needs: build-and-release
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build & Package
+        run: |
+          pnpm build
+          cd src && pnpm vsix
+
+      - name: Publish to VS Code Marketplace
+        if: ${{ secrets.VSCE_PAT != '' }}
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        run: |
+          cd src
+          pnpm vsce publish --no-dependencies
+          echo "Published to VS Code Marketplace"
+
+      - name: Publish to Open VSX
+        if: ${{ secrets.OVSX_PAT != '' }}
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+        run: |
+          cd src
+          pnpm ovsx publish --no-dependencies
+          echo "Published to Open VSX"

@@ -1,5 +1,5 @@
-{
-	"greeting": "Добро пожаловать в Roo Code",
+﻿{
+	"greeting": "Добро пожаловать в CodexFlow",
 	"task": {
 		"title": "Задача",
 		"expand": "Развернуть задачу",
@@ -21,12 +21,12 @@
 		"sharePublicly": "Поделиться публично",
 		"sharePubliclyDescription": "Любой, у кого есть ссылка, может получить доступ",
 		"connectToCloud": "Подключиться к облаку",
-		"connectToCloudDescription": "Войди в Roo Code Cloud, чтобы делиться задачами",
+		"connectToCloudDescription": "Войди в CodexFlow Gateway, чтобы делиться задачами",
 		"sharingDisabledByOrganization": "Обмен отключен организацией",
 		"shareSuccessOrganization": "Ссылка организации скопирована в буфер обмена",
 		"shareSuccessPublic": "Публичная ссылка скопирована в буфер обмена",
-		"openInCloud": "Открыть задачу в Roo Code Cloud",
-		"openInCloudIntro": "Продолжай отслеживать или взаимодействовать с Roo откуда угодно. Отсканируй, нажми или скопируй для открытия.",
+		"openInCloud": "Открыть задачу в CodexFlow Gateway",
+		"openInCloudIntro": "Продолжай отслеживать или взаимодействовать с CodexFlow откуда угодно. Отсканируй, нажми или скопируй для открытия.",
 		"openApiHistory": "Открыть историю API",
 		"openUiHistory": "Открыть историю UI"
 	},
@@ -87,7 +87,7 @@
 		"tooltip": "Отменить текущую операцию"
 	},
 	"scrollToBottom": "Прокрутить чат вниз",
-	"about": "Roo Code — это целая команда разработчиков ИИ в вашем редакторе.",
+	"about": "CodexFlow — это целая команда разработчиков ИИ в вашем редакторе.",
 	"docs": "Ознакомьтесь с нашей <DocsLink>документацией</DocsLink>, чтобы узнать больше.",
 	"onboarding": "Ваш список задач в этом рабочем пространстве пуст.",
 	"rooTips": {
@@ -108,7 +108,7 @@
 		"title": "Режимы",
 		"marketplace": "Маркетплейс режимов",
 		"settings": "Настройки режимов",
-		"description": "Специализированные персоны, которые настраивают поведение Roo.",
+		"description": "Специализированные персоны, которые настраивают поведение CodexFlow.",
 		"searchPlaceholder": "Поиск режимов...",
 		"noResults": "Ничего не найдено"
 	},
@@ -143,7 +143,7 @@
 			"403": "Без авторизации. Ваш ключ API действителен, но провайдер отказался выполнить этот запрос.",
 			"429": "Слишком много запросов. Провайдер ограничивает частоту ваших запросов. Пожалуйста, подождите немного перед следующим вызовом API.",
 			"500": "Ошибка сервера провайдера. На стороне провайдера что-то пошло не так, с вашим запросом все в порядке.",
-			"unknown": "Неизвестная ошибка API. Пожалуйста, свяжитесь с поддержкой Roo Code.",
+			"unknown": "Неизвестная ошибка API. Пожалуйста, свяжитесь с поддержкой CodexFlow.",
 			"connection": "Ошибка подключения. Убедитесь, что у вас есть рабочее подключение к Интернету.",
 			"claudeCodeNotAuthenticated": "Вам необходимо войти в систему, чтобы использовать Claude Code. Перейдите в Настройки и нажмите «Войти в Claude Code» для аутентификации."
 		}
@@ -168,42 +168,42 @@
 		"current": "Текущая"
 	},
 	"instructions": {
-		"wantsToFetch": "Roo хочет получить подробные инструкции для помощи с текущей задачей"
+		"wantsToFetch": "CodexFlow хочет получить подробные инструкции для помощи с текущей задачей"
 	},
 	"fileOperations": {
-		"wantsToRead": "Roo хочет прочитать этот файл",
-		"wantsToReadOutsideWorkspace": "Roo хочет прочитать этот файл вне рабочей области",
-		"didRead": "Roo прочитал этот файл",
-		"wantsToEdit": "Roo хочет отредактировать этот файл",
-		"wantsToEditOutsideWorkspace": "Roo хочет отредактировать этот файл вне рабочей области",
-		"wantsToEditProtected": "Roo хочет отредактировать защищённый файл конфигурации",
-		"wantsToCreate": "Roo хочет создать новый файл",
-		"wantsToSearchReplace": "Roo хочет выполнить поиск и замену в этом файле",
-		"didSearchReplace": "Roo выполнил поиск и замену в этом файле",
-		"wantsToInsert": "Roo хочет вставить содержимое в этот файл",
-		"wantsToInsertWithLineNumber": "Roo хочет вставить содержимое в этот файл на строку {{lineNumber}}",
-		"wantsToInsertAtEnd": "Roo хочет добавить содержимое в конец этого файла",
-		"wantsToReadAndXMore": "Roo хочет прочитать этот файл и еще {{count}}",
-		"wantsToReadMultiple": "Roo хочет прочитать несколько файлов",
-		"wantsToApplyBatchChanges": "Roo хочет применить изменения к нескольким файлам",
-		"wantsToGenerateImage": "Roo хочет сгенерировать изображение",
-		"wantsToGenerateImageOutsideWorkspace": "Roo хочет сгенерировать изображение вне рабочего пространства",
-		"wantsToGenerateImageProtected": "Roo хочет сгенерировать изображение в защищённом месте",
-		"didGenerateImage": "Roo сгенерировал изображение"
+		"wantsToRead": "CodexFlow хочет прочитать этот файл",
+		"wantsToReadOutsideWorkspace": "CodexFlow хочет прочитать этот файл вне рабочей области",
+		"didRead": "CodexFlow прочитал этот файл",
+		"wantsToEdit": "CodexFlow хочет отредактировать этот файл",
+		"wantsToEditOutsideWorkspace": "CodexFlow хочет отредактировать этот файл вне рабочей области",
+		"wantsToEditProtected": "CodexFlow хочет отредактировать защищённый файл конфигурации",
+		"wantsToCreate": "CodexFlow хочет создать новый файл",
+		"wantsToSearchReplace": "CodexFlow хочет выполнить поиск и замену в этом файле",
+		"didSearchReplace": "CodexFlow выполнил поиск и замену в этом файле",
+		"wantsToInsert": "CodexFlow хочет вставить содержимое в этот файл",
+		"wantsToInsertWithLineNumber": "CodexFlow хочет вставить содержимое в этот файл на строку {{lineNumber}}",
+		"wantsToInsertAtEnd": "CodexFlow хочет добавить содержимое в конец этого файла",
+		"wantsToReadAndXMore": "CodexFlow хочет прочитать этот файл и еще {{count}}",
+		"wantsToReadMultiple": "CodexFlow хочет прочитать несколько файлов",
+		"wantsToApplyBatchChanges": "CodexFlow хочет применить изменения к нескольким файлам",
+		"wantsToGenerateImage": "CodexFlow хочет сгенерировать изображение",
+		"wantsToGenerateImageOutsideWorkspace": "CodexFlow хочет сгенерировать изображение вне рабочего пространства",
+		"wantsToGenerateImageProtected": "CodexFlow хочет сгенерировать изображение в защищённом месте",
+		"didGenerateImage": "CodexFlow сгенерировал изображение"
 	},
 	"directoryOperations": {
-		"wantsToViewTopLevel": "Roo хочет просмотреть файлы верхнего уровня в этой директории",
-		"didViewTopLevel": "Roo просмотрел файлы верхнего уровня в этой директории",
-		"wantsToViewRecursive": "Roo хочет рекурсивно просмотреть все файлы в этой директории",
-		"didViewRecursive": "Roo рекурсивно просмотрел все файлы в этой директории",
-		"wantsToSearch": "Roo хочет выполнить поиск в этой директории по <code>{{regex}}</code>",
-		"didSearch": "Roo выполнил поиск в этой директории по <code>{{regex}}</code>",
-		"wantsToSearchOutsideWorkspace": "Roo хочет выполнить поиск в этой директории (вне рабочего пространства) по <code>{{regex}}</code>",
-		"didSearchOutsideWorkspace": "Roo выполнил поиск в этой директории (вне рабочего пространства) по <code>{{regex}}</code>",
-		"wantsToViewTopLevelOutsideWorkspace": "Roo хочет просмотреть файлы верхнего уровня в этой директории (вне рабочего пространства)",
-		"didViewTopLevelOutsideWorkspace": "Roo просмотрел файлы верхнего уровня в этой директории (вне рабочего пространства)",
-		"wantsToViewRecursiveOutsideWorkspace": "Roo хочет рекурсивно просмотреть все файлы в этой директории (вне рабочего пространства)",
-		"didViewRecursiveOutsideWorkspace": "Roo рекурсивно просмотрел все файлы в этой директории (вне рабочего пространства)"
+		"wantsToViewTopLevel": "CodexFlow хочет просмотреть файлы верхнего уровня в этой директории",
+		"didViewTopLevel": "CodexFlow просмотрел файлы верхнего уровня в этой директории",
+		"wantsToViewRecursive": "CodexFlow хочет рекурсивно просмотреть все файлы в этой директории",
+		"didViewRecursive": "CodexFlow рекурсивно просмотрел все файлы в этой директории",
+		"wantsToSearch": "CodexFlow хочет выполнить поиск в этой директории по <code>{{regex}}</code>",
+		"didSearch": "CodexFlow выполнил поиск в этой директории по <code>{{regex}}</code>",
+		"wantsToSearchOutsideWorkspace": "CodexFlow хочет выполнить поиск в этой директории (вне рабочего пространства) по <code>{{regex}}</code>",
+		"didSearchOutsideWorkspace": "CodexFlow выполнил поиск в этой директории (вне рабочего пространства) по <code>{{regex}}</code>",
+		"wantsToViewTopLevelOutsideWorkspace": "CodexFlow хочет просмотреть файлы верхнего уровня в этой директории (вне рабочего пространства)",
+		"didViewTopLevelOutsideWorkspace": "CodexFlow просмотрел файлы верхнего уровня в этой директории (вне рабочего пространства)",
+		"wantsToViewRecursiveOutsideWorkspace": "CodexFlow хочет рекурсивно просмотреть все файлы в этой директории (вне рабочего пространства)",
+		"didViewRecursiveOutsideWorkspace": "CodexFlow рекурсивно просмотрел все файлы в этой директории (вне рабочего пространства)"
 	},
 	"commandOutput": "Вывод команды",
 	"commandExecution": {
@@ -232,18 +232,18 @@
 		"youSaid": "Вы сказали"
 	},
 	"mcp": {
-		"wantsToUseTool": "Roo хочет использовать инструмент на сервере MCP {{serverName}}",
-		"wantsToAccessResource": "Roo хочет получить доступ к ресурсу на сервере MCP {{serverName}}"
+		"wantsToUseTool": "CodexFlow хочет использовать инструмент на сервере MCP {{serverName}}",
+		"wantsToAccessResource": "CodexFlow хочет получить доступ к ресурсу на сервере MCP {{serverName}}"
 	},
 	"modes": {
-		"wantsToSwitch": "Roo хочет переключиться в режим {{mode}}",
-		"wantsToSwitchWithReason": "Roo хочет переключиться в режим {{mode}}, потому что: {{reason}}",
-		"didSwitch": "Roo переключился в режим {{mode}}",
-		"didSwitchWithReason": "Roo переключился в режим {{mode}}, потому что: {{reason}}"
+		"wantsToSwitch": "CodexFlow хочет переключиться в режим {{mode}}",
+		"wantsToSwitchWithReason": "CodexFlow хочет переключиться в режим {{mode}}, потому что: {{reason}}",
+		"didSwitch": "CodexFlow переключился в режим {{mode}}",
+		"didSwitchWithReason": "CodexFlow переключился в режим {{mode}}, потому что: {{reason}}"
 	},
 	"subtasks": {
-		"wantsToCreate": "Roo хочет создать новую подзадачу в режиме {{mode}}",
-		"wantsToFinish": "Roo хочет завершить эту подзадачу",
+		"wantsToCreate": "CodexFlow хочет создать новую подзадачу в режиме {{mode}}",
+		"wantsToFinish": "CodexFlow хочет завершить эту подзадачу",
 		"newTaskContent": "Инструкции по подзадаче",
 		"completionContent": "Подзадача завершена",
 		"resultContent": "Результаты подзадачи",
@@ -251,7 +251,7 @@
 		"completionInstructions": "Подзадача завершена! Вы можете просмотреть результаты и предложить исправления или следующие шаги. Если всё в порядке, подтвердите для возврата результата в родительскую задачу."
 	},
 	"questions": {
-		"hasQuestion": "У Roo есть вопрос"
+		"hasQuestion": "У CodexFlow есть вопрос"
 	},
 	"taskCompleted": "Задача завершена",
 	"error": "Ошибка",
@@ -265,7 +265,7 @@
 	"diffError": {
 		"title": "Не удалось выполнить редактирование"
 	},
-	"troubleMessage": "У Roo возникли проблемы...",
+	"troubleMessage": "У CodexFlow возникли проблемы...",
 	"errorDetails": {
 		"link": "Подробности",
 		"title": "Детали ошибки",
@@ -295,18 +295,18 @@
 		"triggerLabelAll": "YOLO"
 	},
 	"announcement": {
-		"title": "Выпущен Roo Code {{version}}",
-		"support": "Поддержите Roo Code, поставив нам звезду на <githubLink>GitHub</githubLink>.",
+		"title": "Выпущен CodexFlow {{version}}",
+		"support": "Поддержите CodexFlow, поставив нам звезду на <githubLink>GitHub</githubLink>.",
 		"stealthModel": {
-			"feature": "<bold>Бесплатная скрытая модель на ограниченное время</bold> - Code Supernova: Теперь обновлена до <bold>контекстного окна 1M токенов</bold>! Универсальная модель агентного программирования, поддерживающая ввод изображений, доступная через Roo Code Cloud.",
+			"feature": "<bold>Бесплатная скрытая модель на ограниченное время</bold> - Code Supernova: Теперь обновлена до <bold>контекстного окна 1M токенов</bold>! Универсальная модель агентного программирования, поддерживающая ввод изображений, доступная через CodexFlow Gateway.",
 			"note": "(Примечание: промпты и дополнения записываются создателем модели и используются для её улучшения)",
-			"connectButton": "Подключиться к Roo Code Cloud",
-			"selectModel": "Выберите <code>roo/code-supernova</code> от провайдера Roo Code Cloud в Настройках для начала работы.",
+			"connectButton": "Подключиться к CodexFlow Gateway",
+			"selectModel": "Выберите <code>roo/code-supernova</code> от провайдера CodexFlow Gateway в Настройках для начала работы.",
 			"goToSettingsButton": "Перейти к Настройкам"
 		},
 		"release": {
 			"heading": "Что нового:",
-			"skills": "Roo теперь поддерживает <skillsLink>Agent Skills</skillsLink> - переиспользуемые пакеты промптов, инструментов и ресурсов для расширения возможностей Roo.",
+			"skills": "CodexFlow теперь поддерживает <skillsLink>Agent Skills</skillsLink> - переиспользуемые пакеты промптов, инструментов и ресурсов для расширения возможностей CodexFlow.",
 			"nativeToolCalling": "Нативный вызов инструментов теперь требуется для всех новых задач. <blogLink>Узнайте больше</blogLink> о мотивации и что делать, если вы столкнулись с проблемами."
 		},
 		"cloudAgents": {
@@ -342,7 +342,7 @@
 	},
 	"browser": {
 		"session": "Сеанс браузера",
-		"rooWantsToUse": "Roo хочет использовать браузер",
+		"rooWantsToUse": "CodexFlow хочет использовать браузер",
 		"consoleLogs": "Логи консоли",
 		"noNewLogs": "(Новых логов нет)",
 		"screenshot": "Скриншот браузера",
@@ -388,13 +388,13 @@
 	"profileViolationWarning": "Текущий профиль несовместим с настройками вашей организации",
 	"shellIntegration": {
 		"title": "Предупреждение о выполнении команды",
-		"description": "Ваша команда выполняется без интеграции оболочки терминала VSCode. Чтобы скрыть это предупреждение, вы можете отключить интеграцию оболочки в разделе <strong>Terminal</strong> в <settingsLink>настройках Roo Code</settingsLink> или устранить проблемы с интеграцией терминала VSCode, используя ссылку ниже.",
+		"description": "Ваша команда выполняется без интеграции оболочки терминала VSCode. Чтобы скрыть это предупреждение, вы можете отключить интеграцию оболочки в разделе <strong>Terminal</strong> в <settingsLink>настройках CodexFlow</settingsLink> или устранить проблемы с интеграцией терминала VSCode, используя ссылку ниже.",
 		"troubleshooting": "Нажмите здесь для просмотра документации по интеграции оболочки."
 	},
 	"ask": {
 		"autoApprovedRequestLimitReached": {
 			"title": "Достигнут лимит автоматически одобренных запросов",
-			"description": "Roo достиг автоматически одобренного лимита в {{count}} API-запрос(ов). Хотите сбросить счетчик и продолжить задачу?",
+			"description": "CodexFlow достиг автоматически одобренного лимита в {{count}} API-запрос(ов). Хотите сбросить счетчик и продолжить задачу?",
 			"button": "Сбросить и продолжить"
 		},
 		"autoApprovedCostLimitReached": {
@@ -404,8 +404,8 @@
 		}
 	},
 	"codebaseSearch": {
-		"wantsToSearch": "Roo хочет выполнить поиск в кодовой базе по <code>{{query}}</code>",
-		"wantsToSearchWithPath": "Roo хочет выполнить поиск в кодовой базе по <code>{{query}}</code> в <code>{{path}}</code>",
+		"wantsToSearch": "CodexFlow хочет выполнить поиск в кодовой базе по <code>{{query}}</code>",
+		"wantsToSearchWithPath": "CodexFlow хочет выполнить поиск в кодовой базе по <code>{{query}}</code> в <code>{{path}}</code>",
 		"didSearch_one": "Найден 1 результат",
 		"didSearch_other": "Найдено {{count}} результатов",
 		"resultTooltip": "Оценка схожести: {{score}} (нажмите, чтобы открыть файл)"
@@ -429,7 +429,7 @@
 		"ariaLabel": "Версия {{version}} - Нажмите, чтобы просмотреть примечания к выпуску"
 	},
 	"rooCloudCTA": {
-		"title": "Roo Code Cloud развивается!",
+		"title": "CodexFlow Gateway развивается!",
 		"description": "Запускайте удаленные агенты в облаке, получайте доступ к своим задачам из любого места, сотрудничайте с другими и многое другое.",
 		"joinWaitlist": "Зарегистрируйтесь, чтобы получать последние обновления."
 	},
@@ -470,8 +470,8 @@
 		"clickToEdit": "Нажмите, чтобы редактировать сообщение"
 	},
 	"slashCommand": {
-		"wantsToRun": "Roo хочет выполнить слеш-команду",
-		"didRun": "Roo выполнил слеш-команду"
+		"wantsToRun": "CodexFlow хочет выполнить слеш-команду",
+		"didRun": "CodexFlow выполнил слеш-команду"
 	},
 	"todo": {
 		"partial": "{{completed}} из {{total}} задач выполнено",
@@ -481,3 +481,4 @@
 		"started": "Начато"
 	}
 }
+

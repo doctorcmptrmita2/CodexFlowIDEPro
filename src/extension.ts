@@ -1,4 +1,4 @@
-import * as vscode from "vscode"
+﻿import * as vscode from "vscode"
 import * as dotenvx from "@dotenvx/dotenvx"
 import * as path from "path"
 
@@ -131,10 +131,10 @@ export async function activate(context: vscode.ExtensionContext) {
 		}
 	}
 
-	// Initialize the provider *before* the Roo Code Cloud service.
+	// Initialize the provider *before* the CodexFlow Cloud service.
 	const provider = new ClineProvider(context, outputChannel, "sidebar", contextProxy, mdmService)
 
-	// Initialize Roo Code Cloud service.
+	// Initialize CodexFlow Cloud service.
 	const postStateListener = () => ClineProvider.getVisibleInstance()?.postStateToWebview()
 
 	authStateChangedHandler = async (data: { state: AuthState; previousState: AuthState }) => {
@@ -159,13 +159,13 @@ export async function activate(context: vscode.ExtensionContext) {
 						? CloudService.instance.authService?.getSessionToken()
 						: undefined
 					await refreshModels({
-						provider: "roo",
-						baseUrl: process.env.ROO_CODE_PROVIDER_URL ?? "https://api.roocode.com/proxy",
+						provider: "CodexFlow",
+						baseUrl: process.env.ROO_CODE_PROVIDER_URL ?? "https://api.CodexFlow.com/proxy",
 						apiKey: sessionToken,
 					})
 				} else {
 					// Flush without refresh on logout
-					await flushModels({ provider: "roo" }, false)
+					await flushModels({ provider: "CodexFlow" }, false)
 				}
 			} catch (error) {
 				cloudLogger(
@@ -188,7 +188,7 @@ export async function activate(context: vscode.ExtensionContext) {
 							provider.contextProxy.getGlobalState("currentApiConfigName") || "default"
 						// Update it with the stored model using upsertProviderProfile
 						await provider.upsertProviderProfile(currentConfigName, {
-							apiProvider: "roo",
+							apiProvider: "CodexFlow",
 							apiModelId: storedModel,
 						})
 						// Clear the stored model after applying
@@ -330,7 +330,7 @@ export async function activate(context: vscode.ExtensionContext) {
 	// Allows other extensions to activate once Roo is ready.
 	vscode.commands.executeCommand(`${Package.name}.activationCompleted`)
 
-	// Implements the `RooCodeAPI` interface.
+	// Implements the `CodexFlowAPI` interface.
 	const socketPath = process.env.ROO_CODE_IPC_SOCKET_PATH
 	const enableLogging = typeof socketPath === "string"
 
@@ -428,3 +428,4 @@ export async function deactivate() {
 	TelemetryService.instance.shutdown()
 	TerminalRegistry.cleanup()
 }
+

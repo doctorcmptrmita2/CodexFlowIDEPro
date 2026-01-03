@@ -1,4 +1,4 @@
-{
+﻿{
 	"dialogTitle": "Przekaźnik Ludzki - Pomóż skopiować/wkleić informacje",
 	"dialogDescription": "Skopiuj poniższy prompt do AI w przeglądarce, a następnie wklej odpowiedź AI do pola wprowadzania poniżej.",
 	"copiedToClipboard": "Skopiowano do schowka",
@@ -11,3 +11,4 @@
 		"submit": "Wyślij"
 	}
 }
+

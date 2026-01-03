@@ -1,5 +1,97 @@
 # Roo Code Changelog
 
+## [1.0.7] - 2026-01-01
+
+### Fixed
+- 🐛 **LiteLLM Request Termination Fix**: Fixed "undefined completion error: terminated" errors
+  - Added abort signal support to LiteLLM handler for proper request cancellation
+  - Improved error handling for aborted/terminated requests
+  - Error messages now show "Request was terminated or cancelled" instead of "undefined completion error: terminated"
+  - Abort signal is now passed from Task to provider via metadata
+  - Streaming requests can now be properly cancelled mid-stream
+
+### Technical Details
+- Added `abortSignal` field to `ApiHandlerCreateMessageMetadata` interface
+- LiteLLM handler now accepts and uses abort signal from metadata
+- Error handler improved to detect and handle AbortError/DOMException
+- Task now passes abort signal to providers for proper cancellation support
+
+## [1.0.6] - 2026-01-01
+
+### Fixed
+- 🐛 **LiteLLM Request Termination Fix**: Fixed "undefined completion error: terminated" errors
+  - Added abort signal support to LiteLLM handler for proper request cancellation
+  - Improved error handling for aborted/terminated requests
+  - Error messages now show "Request was terminated or cancelled" instead of "undefined completion error: terminated"
+  - Abort signal is now passed from Task to provider via metadata
+  - Streaming requests can now be properly cancelled mid-stream
+
+### Technical Details
+- Added `abortSignal` field to `ApiHandlerCreateMessageMetadata` interface
+- LiteLLM handler now accepts and uses abort signal from metadata
+- Error handler improved to detect and handle AbortError/DOMException
+- Task now passes abort signal to providers for proper cancellation support
+
+## [1.0.5] - 2026-01-01
+
+### Fixed
+- 🐛 **LiteLLM max_tokens Context Window Fix**: Enhanced max_tokens calculation for specific models
+  - DeepSeek V3.2: Limited to 20% of actual context limit (163840 → 32768 tokens)
+  - Claude Sonnet 4.5: Limited to 20% of actual context limit (1000000 → 200000 tokens)
+  - Prevents "400 BadRequestError: This endpoint's maximum context length is exceeded" errors
+  - Model-specific checks ensure proper token allocation for input + output
+
+### Technical Details
+- Added model-specific max_tokens limits for DeepSeek V3.2 and Claude Sonnet 4.5
+- Ensures max_tokens respects actual context window constraints
+- Prevents OpenRouter and other providers from receiving excessive max_tokens values
+- Applied to both streaming and non-streaming requests
+
+## [1.0.4] - 2026-01-01
+
+### Fixed
+- 🐛 **Branding Fix**: Replaced all "Roo" references with "CodexFlow" in error messages
+  - Fixed "Roo tried to use attempt_completion" → "CodexFlow tried to use attempt_completion"
+  - Updated error messages in tools.json and mcp.json
+  - Fixed test mocks to use "CodexFlow" instead of "Roo"
+  - All user-facing error messages now use "CodexFlow" branding
+
+### Technical Details
+- Updated `sayAndCreateMissingParamError` method in Task.ts
+- Updated i18n locale files (en/tools.json, en/mcp.json)
+- Updated test mocks for consistency
+
+## [1.0.3] - 2026-01-01
+
+### Fixed
+- 🐛 **LiteLLM max_tokens Fix**: Fixed context window exceeded error for LiteLLM provider
+  - Now uses `getModelMaxOutputTokens` function to properly calculate max_tokens
+  - Limits max_tokens to 20% of context window (prevents 163840 token errors)
+  - Fixes "400 BadRequestError: This endpoint's maximum context length is 163840 tokens" error
+  - Applied to both streaming and non-streaming requests
+
+### Technical Details
+- Replaced direct `info.maxTokens` usage with centralized `getModelMaxOutputTokens` function
+- Ensures max_tokens respects context window constraints
+- Prevents OpenRouter and other providers from receiving excessive max_tokens values
+
+## [1.0.2] - 2026-01-01
+
+### Added
+- ✨ **CF-X Model Support**: Added full 3-layer workflow support for CF-X model
+  - Plan layer: DeepSeek V3.2 (Reasoning)
+  - Code layer: MiniMax M2.1 (Coding optimized)
+  - Review layer: Gemini 2.5 Flash (Code review)
+- 🔄 **Orchestrator HTTP API Integration**: CF-X model now uses orchestrator HTTP API when available
+- 📡 **Fallback Support**: Direct LiteLLM calls if orchestrator API is unavailable
+- 🎯 **Streaming Support**: CF-X workflow supports streaming responses
+
+### Technical Details
+- CF-X model detection in LiteLLM handler
+- Automatic orchestrator URL detection from LiteLLM base URL
+- 3-layer sequential workflow execution
+- Error handling and fallback mechanisms
+
 ## [3.38.0] - 2025-12-27
 
 ![3.38.0 Release - Skills](/releases/3.38.0-release.png)

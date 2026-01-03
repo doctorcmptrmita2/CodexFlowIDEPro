@@ -1,4 +1,4 @@
-{
+﻿{
 	"errors": {
 		"invalid_settings_format": "Formato JSON delle impostazioni MCP non valido. Assicurati che le tue impostazioni seguano il formato JSON corretto.",
 		"invalid_settings_syntax": "Formato JSON delle impostazioni MCP non valido. Verifica gli errori di sintassi nel tuo file delle impostazioni.",
@@ -26,3 +26,4 @@
 		"project_config_deleted": "File di configurazione MCP del progetto eliminato. Tutti i server MCP del progetto sono stati disconnessi."
 	}
 }
+

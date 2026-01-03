@@ -1,4 +1,4 @@
-{
+﻿{
 	"errors": {
 		"invalid_settings_format": "Format JSON de configuració MCP no vàlid. Si us plau, assegura't que la teva configuració segueix el format JSON correcte.",
 		"invalid_settings_syntax": "Format JSON de configuració MCP no vàlid. Si us plau, comprova si hi ha errors de sintaxi al teu fitxer de configuració.",
@@ -26,3 +26,4 @@
 		"project_config_deleted": "Fitxer de configuració MCP del projecte eliminat. Tots els servidors MCP del projecte han estat desconnectats."
 	}
 }
+
