@@ -1,0 +1,178 @@
+name: CodexFlow Portable Bundle
+
+on:
+  workflow_dispatch:
+    inputs:
+      vscode_version:
+        description: 'VS Code version (e.g., 1.96.0)'
+        required: false
+        default: '1.96.0'
+
+jobs:
+  build-windows-portable:
+    name: Windows Portable Bundle
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.8.1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.19.2
+          cache: pnpm
+
+      - name: Install and Build Extension
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm build
+          cd src && pnpm vsix
+
+      - name: Get Extension Version
+        id: ext_version
+        run: echo "version=$(node -p "require('./src/package.json').version")" >> $GITHUB_OUTPUT
+
+      - name: Download VS Code Portable
+        run: |
+          VSCODE_VERSION="${{ github.event.inputs.vscode_version }}"
+          echo "Downloading VS Code $VSCODE_VERSION..."
+          
+          # Download VS Code ZIP (portable)
+          curl -L "https://update.code.visualstudio.com/${VSCODE_VERSION}/win32-x64-archive/stable" -o vscode.zip
+          
+          # Extract
+          mkdir -p CodexFlow-IDE
+          unzip -q vscode.zip -d CodexFlow-IDE/
+          
+          echo "VS Code extracted"
+
+      - name: Create Portable Data Folder
+        run: |
+          # Create data folder for portable mode
+          mkdir -p CodexFlow-IDE/data
+          mkdir -p CodexFlow-IDE/data/extensions
+          mkdir -p CodexFlow-IDE/data/user-data/User
+          
+          echo "Portable data folder created"
+
+      - name: Install Extension
+        run: |
+          VERSION=${{ steps.ext_version.outputs.version }}
+          
+          # Copy VSIX
+          cp bin/codexflow-agent-${VERSION}.vsix CodexFlow-IDE/data/extensions/
+          
+          # Extract extension
+          cd CodexFlow-IDE/data/extensions
+          unzip -q codexflow-agent-${VERSION}.vsix -d codexflow-agent
+          rm codexflow-agent-${VERSION}.vsix
+          
+          # Rename to proper extension folder
+          mv codexflow-agent/extension codexflow.codexflow-agent-${VERSION}
+          rm -rf codexflow-agent
+          
+          echo "Extension installed"
+
+      - name: Configure Default Settings
+        run: |
+          cat > CodexFlow-IDE/data/user-data/User/settings.json << 'EOF'
+          {
+            "workbench.colorTheme": "Default Dark Modern",
+            "workbench.startupEditor": "none",
+            "files.autoSave": "afterDelay",
+            "editor.fontSize": 14,
+            "editor.fontFamily": "'Cascadia Code', 'Fira Code', Consolas, monospace",
+            "editor.fontLigatures": true,
+            "terminal.integrated.fontSize": 13,
+            "window.titleBarStyle": "custom",
+            "extensions.autoUpdate": false,
+            "telemetry.telemetryLevel": "off"
+          }
+          EOF
+          echo "Settings configured"
+
+      - name: Create Launcher Script
+        run: |
+          # Windows batch launcher
+          cat > CodexFlow-IDE/CodexFlow.bat << 'EOF'
+          @echo off
+          title CodexFlow AI Editor
+          start "" "%~dp0Code.exe"
+          EOF
+          
+          echo "Launcher created"
+
+      - name: Create README
+        run: |
+          cat > CodexFlow-IDE/README.txt << 'EOF'
+          ╔═══════════════════════════════════════════════════════════╗
+          ║           CodexFlow AI Editor - Portable Edition          ║
+          ╠═══════════════════════════════════════════════════════════╣
+          ║                                                           ║
+          ║  BAŞLATMA:                                                ║
+          ║  - CodexFlow.bat dosyasını çift tıklayın                  ║
+          ║  - veya Code.exe'yi doğrudan çalıştırın                   ║
+          ║                                                           ║
+          ║  ÖZELLİKLER:                                              ║
+          ║  - CodexFlow Agent AI asistanı önceden yüklü              ║
+          ║  - Portable mod - kurulum gerektirmez                     ║
+          ║  - Ayarlar data/ klasöründe saklanır                      ║
+          ║                                                           ║
+          ║  API AYARI:                                               ║
+          ║  1. Sol sidebar'da CodexFlow ikonuna tıklayın             ║
+          ║  2. Settings'e gidin                                      ║
+          ║  3. API Key'inizi girin                                   ║
+          ║                                                           ║
+          ║  GitHub: github.com/doctorcmptrmita2/CodexFlowIDEPro      ║
+          ╚═══════════════════════════════════════════════════════════╝
+          EOF
+
+      - name: Package ZIP
+        run: |
+          VERSION=${{ steps.ext_version.outputs.version }}
+          zip -r CodexFlow-IDE-Windows-Portable-v${VERSION}.zip CodexFlow-IDE/
+          echo "Package created: CodexFlow-IDE-Windows-Portable-v${VERSION}.zip"
+          ls -lh *.zip
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: CodexFlow-IDE-Windows-Portable
+          path: CodexFlow-IDE-Windows-Portable-*.zip
+          retention-days: 30
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ide-v${{ steps.ext_version.outputs.version }}
+          name: CodexFlow IDE v${{ steps.ext_version.outputs.version }} (Portable)
+          draft: false
+          prerelease: false
+          files: CodexFlow-IDE-Windows-Portable-*.zip
+          body: |
+            ## CodexFlow AI Editor - Portable Edition
+            
+            VS Code tabanlı, CodexFlow Agent önceden yüklü portable IDE.
+            
+            ### Kurulum
+            1. ZIP dosyasını indirin
+            2. İstediğiniz yere çıkartın
+            3. `CodexFlow.bat` veya `Code.exe` ile başlatın
+            
+            ### Özellikler
+            - ✅ Kurulum gerektirmez
+            - ✅ CodexFlow Agent v${{ steps.ext_version.outputs.version }} önceden yüklü
+            - ✅ Portable mod - USB'den çalışır
+            - ✅ Ayarlar data/ klasöründe saklanır
+            
+            ### Sistem Gereksinimleri
+            - Windows 10/11 x64
+            - ~500MB disk alanı
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
