@@ -1,0 +1,42 @@
+{
+  "nameShort": "CodexFlow",
+  "nameLong": "CodexFlow AI Editor",
+  "applicationName": "codexflow",
+  "dataFolderName": ".codexflow",
+  "win32MutexName": "codexflow",
+  "win32DirName": "CodexFlow",
+  "win32NameVersion": "CodexFlow",
+  "win32AppUserModelId": "CodexFlow.CodexFlow",
+  "win32RegValueName": "CodexFlow",
+  "licenseFileName": "LICENSE.txt",
+  "licenseName": "MIT",
+  "licenseUrl": "https://github.com/doctorcmptrmita2/CodexFlowIDEPro/blob/main/LICENSE",
+  "reportIssueUrl": "https://github.com/doctorcmptrmita2/CodexFlowIDEPro/issues",
+  "urlProtocol": "codexflow",
+  "extensionsGallery": {
+    "serviceUrl": "https://open-vsx.org/vscode/gallery",
+    "itemUrl": "https://open-vsx.org/vscode/item",
+    "resourceUrlTemplate": "https://open-vsx.org/vscode/asset/{publisher}/{name}/{version}/Microsoft.VisualStudio.Code.WebResources/{path}",
+    "controlUrl": "",
+    "nlsBaseUrl": "",
+    "publisherUrl": ""
+  },
+  "linkProtectionTrustedDomains": [
+    "https://api.codexflow.dev",
+    "https://open-vsx.org",
+    "https://github.com"
+  ],
+  "quality": "stable",
+  "extensionAllowedProposedApi": [
+    "codexflow.codexflow-agent"
+  ],
+  "builtInExtensions": [
+    {
+      "name": "codexflow-agent",
+      "version": "1.0.7",
+      "repo": "https://github.com/doctorcmptrmita2/CodexFlowIDEPro"
+    }
+  ],
+  "webEndpointUrlTemplate": "https://{{uuid}}.vscode-cdn.net/{{quality}}/{{commit}}/out/vs/workbench/contrib/webview/browser/pre/",
+  "darwinBundleIdentifier": "com.codexflow.editor"
+}

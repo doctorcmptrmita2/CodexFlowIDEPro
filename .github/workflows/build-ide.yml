@@ -1,0 +1,227 @@
+name: Build CodexFlow IDE
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'IDE Version (e.g., 1.0.0)'
+        required: false
+        default: '1.0.0'
+      vscode_version:
+        description: 'VS Code version to base on'
+        required: false
+        default: '1.96.0'
+
+env:
+  APP_NAME: CodexFlow
+  VSCODE_QUALITY: stable
+
+jobs:
+  build-windows:
+    name: Build Windows x64
+    runs-on: windows-latest
+    
+    steps:
+      - name: Checkout CodexFlow
+        uses: actions/checkout@v4
+        with:
+          path: codexflow
+
+      - name: Checkout VSCodium
+        uses: actions/checkout@v4
+        with:
+          repository: VSCodium/vscodium
+          ref: master
+          path: vscodium
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Build Tools
+        run: |
+          npm install -g yarn
+          choco install visualstudio2022buildtools --package-parameters "--add Microsoft.VisualStudio.Workload.VCTools --includeRecommended"
+
+      - name: Get VS Code Source
+        working-directory: vscodium
+        run: |
+          ./get_repo.sh
+        shell: bash
+
+      - name: Apply CodexFlow Branding
+        run: |
+          # Copy product.json
+          Copy-Item -Force "codexflow/ide-build/product.json" "vscodium/vscode/product.json"
+          
+          # Copy icons if exist
+          if (Test-Path "codexflow/ide-build/resources") {
+            Copy-Item -Recurse -Force "codexflow/ide-build/resources/*" "vscodium/vscode/resources/"
+          }
+          
+          Write-Host "Branding applied successfully"
+        shell: pwsh
+
+      - name: Prepare Extension
+        run: |
+          # Create extensions directory
+          New-Item -ItemType Directory -Force -Path "vscodium/.build/extensions"
+          
+          # Copy VSIX if exists
+          if (Test-Path "codexflow/bin/*.vsix") {
+            Copy-Item "codexflow/bin/*.vsix" "vscodium/.build/extensions/"
+            Write-Host "Extension copied"
+          }
+        shell: pwsh
+
+      - name: Build VS Code
+        working-directory: vscodium
+        env:
+          SHOULD_BUILD: 'yes'
+          SHOULD_BUILD_REH: 'no'
+          CI_BUILD: 'no'
+          OS_NAME: windows
+          VSCODE_ARCH: x64
+          VSCODE_QUALITY: stable
+        run: |
+          ./build.sh
+        shell: bash
+
+      - name: Package Installer
+        working-directory: vscodium
+        run: |
+          ./build/windows/msi/build.sh
+        shell: bash
+
+      - name: Upload Windows Installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: CodexFlow-Windows-x64-Setup
+          path: |
+            vscodium/VSCode-win32-x64/*.exe
+            vscodium/VSCode-win32-x64/*.msi
+          retention-days: 30
+
+  build-linux:
+    name: Build Linux x64
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout CodexFlow
+        uses: actions/checkout@v4
+        with:
+          path: codexflow
+
+      - name: Checkout VSCodium
+        uses: actions/checkout@v4
+        with:
+          repository: VSCodium/vscodium
+          ref: master
+          path: vscodium
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential g++ libx11-dev libxkbfile-dev libsecret-1-dev rpm fakeroot
+
+      - name: Get VS Code Source
+        working-directory: vscodium
+        run: ./get_repo.sh
+
+      - name: Apply CodexFlow Branding
+        run: |
+          cp -f codexflow/ide-build/product.json vscodium/vscode/product.json
+          
+          if [ -d "codexflow/ide-build/resources" ]; then
+            cp -rf codexflow/ide-build/resources/* vscodium/vscode/resources/
+          fi
+          
+          echo "Branding applied"
+
+      - name: Prepare Extension
+        run: |
+          mkdir -p vscodium/.build/extensions
+          
+          if ls codexflow/bin/*.vsix 1> /dev/null 2>&1; then
+            cp codexflow/bin/*.vsix vscodium/.build/extensions/
+            echo "Extension copied"
+          fi
+
+      - name: Build VS Code
+        working-directory: vscodium
+        env:
+          SHOULD_BUILD: 'yes'
+          SHOULD_BUILD_REH: 'no'
+          CI_BUILD: 'no'
+          OS_NAME: linux
+          VSCODE_ARCH: x64
+          VSCODE_QUALITY: stable
+        run: ./build.sh
+
+      - name: Upload Linux Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: CodexFlow-Linux-x64
+          path: |
+            vscodium/VSCode-linux-x64/*.deb
+            vscodium/VSCode-linux-x64/*.rpm
+            vscodium/VSCode-linux-x64/*.tar.gz
+          retention-days: 30
+
+  create-release:
+    name: Create Release
+    needs: [build-windows, build-linux]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    
+    steps:
+      - name: Download Windows Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: CodexFlow-Windows-x64-Setup
+          path: artifacts/windows
+
+      - name: Download Linux Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: CodexFlow-Linux-x64
+          path: artifacts/linux
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ide-v${{ github.event.inputs.version }}
+          name: CodexFlow IDE v${{ github.event.inputs.version }}
+          body: |
+            ## CodexFlow AI Editor v${{ github.event.inputs.version }}
+            
+            AI-powered code editor based on VS Code.
+            
+            ### Downloads
+            - **Windows:** `.exe` installer
+            - **Linux:** `.deb`, `.rpm`, `.tar.gz`
+            
+            ### Features
+            - Built-in CodexFlow Agent extension
+            - OpenAI-compatible API support
+            - 17 language support
+            
+            ### Installation
+            Download the appropriate installer for your platform and run it.
+          draft: true
+          files: |
+            artifacts/windows/*
+            artifacts/linux/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
